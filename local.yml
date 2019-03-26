@@ -1,5 +1,7 @@
 - hosts: localhost
   connection: local
   become: true
+  vars:
+    ansible_python_interpreter: python3
   roles:
     - bootstrap
