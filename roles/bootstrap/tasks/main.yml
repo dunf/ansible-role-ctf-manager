@@ -1,28 +1,27 @@
 ---
 # tasks file for ctf-manager
 #
-tasks:
-  - name: Replacing ansible.cfg
-    copy:
-      src: ansible.cfg
-      dest: /etc/ansible/ansible.cfg
+- name: Replacing ansible.cfg
+  copy:
+    src: ansible.cfg
+    dest: /etc/ansible/ansible.cfg
+
+- name: Create roles dir
+  file:
+    path: /etc/ansible/roles
+    state: directory
+
+- name: Create group_vars dir
+  file:
+    path: /etc/ansible/group_vars 
+    state: directory
+
+- name: Add group_vars/all
+  copy:
+    src: 'all.yml'
+    dest: /etc/ansible/group_vars/all.yml
   
-  - name: Create roles dir
-    file:
-      path: /etc/ansible/roles
-      state: directory
-  
-  - name: Create group_vars dir
-    file:
-      path: /etc/ansible/group_vars 
-      state: directory
-  
-  - name: Add group_vars/all
-    copy:
-      src: 'all.yml'
-      dest: /etc/ansible/group_vars/all.yml
-    
-  - name: Add group_vars/manager
-    copy:
-      src: manager.yml
-      dest: /etc/ansible/group_vars/manager.yml
+- name: Add group_vars/manager
+  copy:
+    src: manager.yml
+    dest: /etc/ansible/group_vars/manager.yml
