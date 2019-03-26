@@ -18,7 +18,7 @@
 
 - name: Add group_vars/all
   copy:
-    src: 'all.yml'
+    src: all.yml
     dest: /etc/ansible/group_vars/all.yml
   
 - name: Add group_vars/manager
