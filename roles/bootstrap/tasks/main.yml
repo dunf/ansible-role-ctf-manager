@@ -1,6 +1,11 @@
 ---
 # tasks file for ctf-manager
-#
+
+- name:
+  file:
+    path: /etc/ansible/ansible.cfg
+    state: absent
+
 - name: Replacing ansible.cfg
   copy:
     src: ansible.cfg
