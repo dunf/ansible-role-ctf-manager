@@ -1,5 +1,5 @@
 ansible_python_interpreter: python3
-ansible_user: ubuntu
+ansible_user: root
 ntp_timezone: Europe/Oslo
 ntp_servers:
   - ntp.hig.no
